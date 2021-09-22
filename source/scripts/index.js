@@ -22,8 +22,10 @@
 //data.saysome();
 
 import slider from './blocks/slider';
+import slider__n from './blocks/slider-n';
 
 window.addEventListener('DOMContentLoaded', () => {
     slider();
+    slider__n();
 });
 
