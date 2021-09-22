@@ -1,7 +1,7 @@
 on:
   push:
     branches:
-      - webpack
+      - master
   pull_request:
     branches: '*'
 
