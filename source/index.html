@@ -1,15 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>webpack</title>
-    <link rel="stylesheet" href="css/style.min.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>webpack</title>
+  <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body class="body">
-    <h1>My webpack build</h1>
-    <p class="webpack-title"></p>
-    <script src="js/bundle.js"></script>
+  <header class="header">
+
+  </header>
+  <main class="main">
+    <section class="slider">
+      <div class="sleder-controls">
+        <button class="sleder-controls__button sleder-controls__button--prev" type="button"><span class="visually__hiden">left</span>
+          <svg class="sleder-controls__button-img" aria-hidden="true" focusable="false" width="38" height="5" viewBox="0 0 38 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line x1="37.3206" y1="3.25" x2="7.32056" y2="3.25" stroke="black" stroke-width="2"/>
+            <path d="M17.3205 -3.02842e-06L17.3205 4.25L7.43094e-07 4.25L8.32056 1.75L17.3205 -3.02842e-06Z" fill="black"/>
+            </svg>
+        </button>
+        <span class="sleder-controls__total sleder-controls__total--current">01</span>
+        <span class="sleder-controls__total sleder-controls__total--total">04</span>
+        <button class="sleder-controls__button sleder-controls__button--next" type="button"><span class="visually__hiden">right</span>
+          <svg class="sleder-controls__button-img" aria-hidden="true" focusable="false" width="38" height="5" viewBox="0 0 38 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line y1="1" x2="30" y2="1" stroke="black" stroke-width="2"/>
+            <path d="M20 4.25L20 1.51421e-06L37.3206 0L29 2.5L20 4.25Z" fill="black"/>
+            </svg>
+        </button>
+      </div>
+      <div class="slider-items">
+        <div class="slider-items__item">
+          <img class="slider-items__img" width="600px" height="400px" src="img/slider-1.jpg" alt="slide 1">
+        </div>
+        <div class="slider-items__item">
+          <img class="slider-items__img" src="img/slider-2.jpg" alt="slide 2">
+        </div>
+        <div class="slider-items__item">
+          <img class="slider-items__img" width="600px" height="400px" src="img/slider-3.jpg" alt="slide 3">
+        </div>
+        <div class="slider-items__item">
+          <img class="slider-items__img" src="img/slider-4.jpg" alt="slide 4">
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+
+  </footer>
+
+  <script src="js/bundle.js"></script>
 </body>
 </html>
