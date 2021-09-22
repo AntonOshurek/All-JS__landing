@@ -74,7 +74,7 @@ exports.script = script;
 
 //squoosh
 const optimizeImages = () => {
-  return gulp.src('source/img/**/*.{png,jpg,svg}')
+  return gulp.src('source/img/**/*.{png,jpg,svg,jpeg}')
   .pipe(squoosh())
   .pipe(gulp.dest('build/img'))
 }
@@ -82,14 +82,14 @@ exports.optimizeImages = optimizeImages;
 
 //copyimg
 const copyImages = () => {
-  return gulp.src('source/img/**/*.{png,jpg,svg}')
+  return gulp.src('source/img/**/*.{png,jpg,svg,jpeg}')
   .pipe(gulp.dest('build/img'))
 }
 exports.copyImages = copyImages;
 
 // WebP
 const createWebp = () => {
-  return gulp.src("source/img/**/*.{jpg,png}")
+  return gulp.src("source/img/**/*.{jpg,png,jpeg}")
     .pipe(webp({quality: 90}))
     .pipe(gulp.dest("build/img"))
 }
