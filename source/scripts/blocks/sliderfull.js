@@ -1,4 +1,4 @@
-export default function slider__n() {
+export default function sliderFull() {
   //btn
   const sliderBtnPrev = document.querySelector('.sliderfull-items__button--prev');
   const sliderBtnNext = document.querySelector('.sliderfull-items__button--next');
