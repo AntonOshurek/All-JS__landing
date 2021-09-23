@@ -47,22 +47,15 @@ export default function slider__n() {
   });
 
   function selectbtn() {
-    indicatorsBtn.forEach(btn => {
-      btn.classList.remove('sliderfull-indicators__button--active');
-    });
-
-    this.classList.add('sliderfull-indicators__button--active');
     let atribute = this.getAttribute('data-slide-index');
     slideIndex = atribute;
 
     offset = +width.slice(0, width.length - 2) * (atribute - 1);
-
     slidesField.style.transform = `translate(-${offset}px)`;
 
     showCurrentNumber();
   };
 
-  sliderCounterTotal.innerHTML = getZero(slides.length);
   function showCurrentNumber() {
     if (slideIndex > slides.length) slideIndex = 1;
     if (slideIndex < 1) slideIndex = slides.length;
@@ -81,11 +74,9 @@ export default function slider__n() {
     } else {
       offset += +width.slice(0, width.length - 2);
     }
-
     slideIndex++;
 
     slidesField.style.transform = `translate(-${offset}px)`;
-
     showCurrentNumber();
   });
 
@@ -95,11 +86,9 @@ export default function slider__n() {
     } else {
       offset -= +width.slice(0, width.length - 2);
     }
-
     slideIndex--;
 
     slidesField.style.transform = `translate(-${offset}px)`;
-
     showCurrentNumber();
   });
 };
