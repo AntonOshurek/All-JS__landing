@@ -30,6 +30,22 @@ export default function slider__n() {
     }
   };
 
+  const sliderIndicatorBlock = document.querySelector('.sliderfull-indicators');
+  function createIndicatorBtn() {
+    let element = '';
+
+    for(let i = 0; i < slides.length; i++) {
+      element += `
+        <li class="sliderfull-indicators__item">
+          <button class="sliderfull-indicators__button" data-slide-index = "${i}"></button>
+        </li>
+      `;
+
+      sliderIndicatorBlock.innerHTML = element;
+    }
+  };
+  createIndicatorBtn();
+
   sliderCounterTotal.innerHTML = getZero(slides.length);
   function showCurrentNumber() {
     if (slideIndex > slides.length) slideIndex = 1;
