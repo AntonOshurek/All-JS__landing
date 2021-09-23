@@ -1,15 +1,15 @@
 export default function slider__n() {
   //btn
-  const sliderBtnPrev = document.querySelector('.sleder-n-controls__button--prev');
-  const sliderBtnNext = document.querySelector('.sleder-n-controls__button--next');
+  const sliderBtnPrev = document.querySelector('.slederfull-controls__button--prev');
+  const sliderBtnNext = document.querySelector('.slederfull-controls__button--next');
   //slides counter
-  const sliderCounterCurrent = document.querySelector('.sleder-n-controls__total--current');
-  const sliderCounterTotal = document.querySelector('.sleder-n-controls__total--total');
+  const sliderCounterCurrent = document.querySelector('.slederfull-controls__total--current');
+  const sliderCounterTotal = document.querySelector('.slederfull-controls__total--total');
   //slides wrpper
-  const slidesWrapper = document.querySelector('.slider-n-items');
-  const slidesField = document.querySelector('.slider-n-items__inner');
+  const slidesWrapper = document.querySelector('.sliderfull-items');
+  const slidesField = document.querySelector('.sliderfull-items__inner');
   //all sledes
-  const slides = document.querySelectorAll('.slider-n-items__item');
+  const slides = document.querySelectorAll('.sliderfull-items__item');
 
   let slideIndex = 1;
   let offset = 0;
