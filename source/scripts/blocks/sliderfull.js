@@ -1,7 +1,7 @@
-export default function slider__n() {
+export default function sliderFull() {
   //btn
-  const sliderBtnPrev = document.querySelector('.slederfull-controls__button--prev');
-  const sliderBtnNext = document.querySelector('.slederfull-controls__button--next');
+  const sliderBtnPrev = document.querySelector('.sliderfull-items__button--prev');
+  const sliderBtnNext = document.querySelector('.sliderfull-items__button--next');
   //slides counter
   const sliderCounterCurrent = document.querySelector('.slederfull-controls__total--current');
   const sliderCounterTotal = document.querySelector('.slederfull-controls__total--total');
@@ -14,6 +14,10 @@ export default function slider__n() {
   let slideIndex = 1;
   let offset = 0;
   const width = window.getComputedStyle(slidesWrapper).width;
+
+  slides.forEach(slide => {
+    slide.style.width = width;
+  });
 
   slidesField.style.width = 100 * slides.length + '%';
 
@@ -47,22 +51,15 @@ export default function slider__n() {
   });
 
   function selectbtn() {
-    indicatorsBtn.forEach(btn => {
-      btn.classList.remove('sliderfull-indicators__button--active');
-    });
-
-    this.classList.add('sliderfull-indicators__button--active');
     let atribute = this.getAttribute('data-slide-index');
     slideIndex = atribute;
 
     offset = +width.slice(0, width.length - 2) * (atribute - 1);
-
     slidesField.style.transform = `translate(-${offset}px)`;
 
     showCurrentNumber();
   };
 
-  sliderCounterTotal.innerHTML = getZero(slides.length);
   function showCurrentNumber() {
     if (slideIndex > slides.length) slideIndex = 1;
     if (slideIndex < 1) slideIndex = slides.length;
@@ -81,11 +78,9 @@ export default function slider__n() {
     } else {
       offset += +width.slice(0, width.length - 2);
     }
-
     slideIndex++;
 
     slidesField.style.transform = `translate(-${offset}px)`;
-
     showCurrentNumber();
   });
 
@@ -95,11 +90,9 @@ export default function slider__n() {
     } else {
       offset -= +width.slice(0, width.length - 2);
     }
-
     slideIndex--;
 
     slidesField.style.transform = `translate(-${offset}px)`;
-
     showCurrentNumber();
   });
 };

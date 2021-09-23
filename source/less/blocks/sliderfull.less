@@ -3,23 +3,26 @@
 .sliderfull{
   position: relative;
   width: 100%;
-  //height: 400px;
   padding: @vertical-block-padding 20px;
   display: grid;
-  grid-gap: 40px;
+  grid-gap: 10px;
   justify-items: center;
   grid-template-columns: 1fr;
   grid-template-rows: min-content min-content;
   background-color: @slider-bg;
+
+  @media (max-width: 600px) {
+    padding: @vertical-block-padding 0;
+  }
 }
 
-//controls
+//controls total value
 .slederfull-controls {
 height: min-content;
 position: relative;
 width: min-content;
 display: grid;
-grid-template-columns: repeat(4, min-content);
+grid-template-columns: repeat(2, min-content);
 align-items: center;
 grid-column-gap: 20px;
 
@@ -32,27 +35,6 @@ grid-column-gap: 20px;
     transform: translateX(100%) rotate(15deg);
     top: 0;
     background-color: @decor-lines;
-  }
-}
-
-.slederfull-controls__button {
-  width: 80px;
-  height: 30px;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-}
-
-.slederfull-controls__button-img {
-  width: 100%;
-  height: 100%;
-
-  &:hover  {
-    opacity: 0.7;
-  }
-
-  &:active {
-    opacity: 0.3;
   }
 }
 
@@ -69,6 +51,40 @@ grid-column-gap: 20px;
     font-size: 18px;
     opacity: 0.7;
     align-self: end;
+  }
+}
+
+//controls buttons
+.sliderfull-items__button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 50px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+
+  &--next {
+    right: 10px;
+  }
+
+  &--prev {
+    left: 10px;
+  }
+}
+
+.sliderfull-items__button-img {
+  width: 100%;
+  height: 100%;
+
+  &:hover  {
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 0.3;
   }
 }
 
@@ -101,8 +117,14 @@ grid-column-gap: 20px;
   transition: 0.4s ease;
   cursor: pointer;
 
+  @media (max-width: 600px) {
+    width: 30px;
+    height: 10px;
+  }
+
   &--active {
     background-color: tomato;
+    opacity: 1;
   }
 
   &:hover,
@@ -120,6 +142,11 @@ grid-column-gap: 20px;
 .sliderfull-items {
   width: 500px;
   overflow: hidden;
+  position: relative;
+
+  @media (max-width: 600px) {
+    width: 100%;
+  }
 }
 
 .sliderfull-items__inner {
@@ -135,4 +162,8 @@ grid-column-gap: 20px;
   width: 500px;
   height: 200px;
   object-fit: cover;
+
+  @media (max-width: 600px) {
+    width: 100%;
+  }
 }
