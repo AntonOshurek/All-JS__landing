@@ -51,27 +51,27 @@ grid-column-gap: 20px;
 }
 
 //controls buttons
-.slederfull__controls-button {
+.sliderfull-items__button {
   position: absolute;
-  top: 55%;
+  top: 50%;
   transform: translateY(-50%);
-  width: 80px;
-  height: 30px;
+  width: 40px;
+  height: 50px;
   background-color: transparent;
   border: none;
   cursor: pointer;
   z-index: 1;
 
   &--next {
-    right: 0;
+    right: 10px;
   }
 
   &--prev {
-    left: 0;
+    left: 10px;
   }
 }
 
-.slederfull__controls-button-img {
+.sliderfull-items__button-img {
   width: 100%;
   height: 100%;
 
@@ -115,6 +115,7 @@ grid-column-gap: 20px;
 
   &--active {
     background-color: tomato;
+    opacity: 1;
   }
 
   &:hover,
