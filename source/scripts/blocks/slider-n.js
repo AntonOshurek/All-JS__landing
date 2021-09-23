@@ -67,7 +67,13 @@ export default function slider__n() {
     if (slideIndex > slides.length) slideIndex = 1;
     if (slideIndex < 1) slideIndex = slides.length;
     sliderCounterCurrent.innerHTML = getZero(slideIndex);
+
+    indicatorsBtn.forEach(btn => {
+      btn.classList.remove('sliderfull-indicators__button--active');
+    });
+    indicatorsBtn[slideIndex - 1].classList.add('sliderfull-indicators__button--active');
   };
+  showCurrentNumber();
 
   sliderBtnNext.addEventListener('click', () => {
     if (offset == +width.slice(0, width.length - 2) * (slides.length - 1)) {
