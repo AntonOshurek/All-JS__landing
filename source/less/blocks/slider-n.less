@@ -10,6 +10,10 @@
   grid-template-columns: 1fr;
   grid-template-rows: min-content min-content;
   background-color: @slider-bg;
+
+  @media (max-width: 600px) {
+    padding: @vertical-block-padding 0;
+  }
 }
 
 //controls total value
@@ -134,6 +138,10 @@ grid-column-gap: 20px;
   width: 500px;
   overflow: hidden;
   position: relative;
+
+  @media (max-width: 600px) {
+    width: 100%;
+  }
 }
 
 .sliderfull-items__inner {
@@ -149,4 +157,8 @@ grid-column-gap: 20px;
   width: 500px;
   height: 200px;
   object-fit: cover;
+
+  @media (max-width: 600px) {
+    width: 100%;
+  }
 }

@@ -15,6 +15,10 @@ export default function slider__n() {
   let offset = 0;
   const width = window.getComputedStyle(slidesWrapper).width;
 
+  slides.forEach(slide => {
+    slide.style.width = width;
+  });
+
   slidesField.style.width = 100 * slides.length + '%';
 
   function getZero (num) {
