@@ -15,11 +15,6 @@ export default function slider__n() {
   let offset = 0;
   const width = window.getComputedStyle(slidesWrapper).width;
 
-  //????????????????????
-  /*slides.forEach(slide => {
-    slide.style.width = width;
-  });*/
-
   slidesField.style.width = 100 * slides.length + '%';
 
   function getZero (num) {
@@ -37,7 +32,7 @@ export default function slider__n() {
     for(let i = 0; i < slides.length; i++) {
       element += `
         <li class="sliderfull-indicators__item">
-          <button class="sliderfull-indicators__button" data-slide-index = "${i}"></button>
+          <button class="sliderfull-indicators__button" data-slide-index = "${i + 1}"></button>
         </li>
       `;
 
@@ -45,6 +40,27 @@ export default function slider__n() {
     }
   };
   createIndicatorBtn();
+
+  const indicatorsBtn = document.querySelectorAll('.sliderfull-indicators__button');
+  indicatorsBtn.forEach(btn => {
+    btn.addEventListener('click', selectbtn);
+  });
+
+  function selectbtn() {
+    indicatorsBtn.forEach(btn => {
+      btn.classList.remove('sliderfull-indicators__button--active');
+    });
+
+    this.classList.add('sliderfull-indicators__button--active');
+    let atribute = this.getAttribute('data-slide-index');
+    slideIndex = atribute;
+
+    offset = +width.slice(0, width.length - 2) * (atribute - 1);
+
+    slidesField.style.transform = `translate(-${offset}px)`;
+
+    showCurrentNumber();
+  };
 
   sliderCounterTotal.innerHTML = getZero(slides.length);
   function showCurrentNumber() {
