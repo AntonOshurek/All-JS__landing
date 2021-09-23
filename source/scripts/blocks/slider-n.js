@@ -31,14 +31,11 @@ export default function slider__n() {
   };
 
   sliderCounterTotal.innerHTML = getZero(slides.length);
-function showCurrentNumber() {
-
-  if (slideIndex > slides.length) slideIndex = 1;
-  if (slideIndex < 1) slideIndex = slides.length;
-  sliderCounterCurrent.innerHTML = getZero(slideIndex);
-  console.log(slideIndex);
-}
-
+  function showCurrentNumber() {
+    if (slideIndex > slides.length) slideIndex = 1;
+    if (slideIndex < 1) slideIndex = slides.length;
+    sliderCounterCurrent.innerHTML = getZero(slideIndex);
+  };
 
   sliderBtnNext.addEventListener('click', () => {
     if (offset == +width.slice(0, width.length - 2) * (slides.length - 1)) {
@@ -67,30 +64,4 @@ function showCurrentNumber() {
 
     showCurrentNumber();
   });
-
-
-  /*sliderCounterTotal.innerHTML = getZero(slides.length);
-
-  function showSlides(n) {
-    if (n > slides.length) slideIndex = 1;
-    if (n < 1) slideIndex = slides.length;
-
-    slides.forEach(item => item.classList.add('slider-n-items__item--hidden'));
-    slides[slideIndex - 1].classList.remove('slider-n-items__item--hidden');
-
-    sliderCounterCurrent.innerHTML = getZero(slideIndex);
-  };
-
-  function plusSlides(n) {
-    showSlides(slideIndex += n);
-  };
-
-  sliderBtnPrev.addEventListener('click', () => {
-    plusSlides(-1);
-  });
-
-  sliderBtnNext.addEventListener('click', () => {
-    plusSlides(1);
-  });*/
-
 };
