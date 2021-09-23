@@ -12,16 +12,10 @@
   background-color: @slider-bg;
 }
 
-//controls
+//controls total value
 .slederfull-controls {
 height: min-content;
 position: relative;
-//position: absolute;
-//width: 100%;
-//height: 100%;
-//display: flex;
-//align-items: center;
-//justify-content: space-between;
 width: min-content;
 display: grid;
 grid-template-columns: repeat(2, min-content);
@@ -40,7 +34,24 @@ grid-column-gap: 20px;
   }
 }
 
-.slederfull-controls__button {
+.slederfull-controls__total {
+  font-weight: bold;
+  font-family: 'Lato', sans-serif;
+
+  &--current {
+    font-size: 23px;
+    align-self: start;
+  }
+
+  &--total {
+    font-size: 18px;
+    opacity: 0.7;
+    align-self: end;
+  }
+}
+
+//controls buttons
+.slederfull__controls-button {
   position: absolute;
   top: 55%;
   transform: translateY(-50%);
@@ -60,7 +71,7 @@ grid-column-gap: 20px;
   }
 }
 
-.slederfull-controls__button-img {
+.slederfull__controls-button-img {
   width: 100%;
   height: 100%;
 
@@ -70,22 +81,6 @@ grid-column-gap: 20px;
 
   &:active {
     opacity: 0.3;
-  }
-}
-
-.slederfull-controls__total {
-  font-weight: bold;
-  font-family: 'Lato', sans-serif;
-
-  &--current {
-    font-size: 23px;
-    align-self: start;
-  }
-
-  &--total {
-    font-size: 18px;
-    opacity: 0.7;
-    align-self: end;
   }
 }
 

@@ -1,7 +1,7 @@
 export default function slider__n() {
   //btn
-  const sliderBtnPrev = document.querySelector('.slederfull-controls__button--prev');
-  const sliderBtnNext = document.querySelector('.slederfull-controls__button--next');
+  const sliderBtnPrev = document.querySelector('.slederfull__controls-button--prev');
+  const sliderBtnNext = document.querySelector('.slederfull__controls-button--next');
   //slides counter
   const sliderCounterCurrent = document.querySelector('.slederfull-controls__total--current');
   const sliderCounterTotal = document.querySelector('.slederfull-controls__total--total');
