@@ -15,6 +15,7 @@ export default function popup() {
     e.preventDefault();
     popup.classList.add('popup--target');
     body.classList.add("body--scrolloff");
+    popupCloseBtn.focus();
     modalKeyOpt();
   };
 
