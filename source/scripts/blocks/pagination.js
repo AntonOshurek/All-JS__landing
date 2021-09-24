@@ -19,13 +19,10 @@ export  default function pagination() {
     {name: 'name17', surname: 'surname17', age: 30},
   ];
 
-  const paginationBtns = document.querySelectorAll('.pagination-controls__btn');
-  const tableBody = document.querySelector('.table__body');
-  const paginationControls = document.querySelector('.pagination-controls');
-
   let notesOnPage = 5;
 
-  /*function showPaginationBtns() {
+  function showPaginationBtns() {
+    const paginationControls = document.querySelector('.pagination-controls');
     let btns;
     for(let i = 0; i < users.length / notesOnPage; i++) {
       btns += `
@@ -33,13 +30,12 @@ export  default function pagination() {
           <button class="pagination-controls__btn" type="button">${i + 1}</button>
         </li>
       `;
-
       paginationControls.innerHTML = btns;
-      listenPagBtns();
     };
-
   };
-  showPaginationBtns();*/
+  showPaginationBtns();
+
+  const paginationBtns = document.querySelectorAll('.pagination-controls__btn');
 
   paginationBtns.forEach(btn => {
     btn.addEventListener('click', function() {
@@ -64,6 +60,7 @@ export  default function pagination() {
   };
 
   function showPaginationList(notes) {
+    const tableBody = document.querySelector('.table__body');
     let list;
 
     notes.forEach(elem => {
