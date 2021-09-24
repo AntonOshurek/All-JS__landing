@@ -1,0 +1,84 @@
+//var
+@table-head-color: #f0f2f2;
+@table-even-color: #fcf5f5;
+@table-odd-color: #f7f2f2;
+
+//width
+@desctope-width: 1200px;
+@tablet-width: 900px;
+@mobile-width: 600px;
+
+.pagination {
+  padding: 20px 20px;
+}
+
+.table {
+  background-color: @standart-white;
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+
+  &--head {
+    color: @standart-black;
+    font-size: 19px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  &--row {
+    font-size: 19px;
+    background-color: @table-car-color;
+    color: @standart-black;
+    text-transform: uppercase;
+    word-wrap: break-word;
+  }
+}
+
+.table__title {
+  font-family: "PT Sans", "Arial", sans-serif;
+  font-size: 26px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: purple;
+  margin-bottom: 15px;
+
+  @media (max-width: @tablet-width) {
+    text-align: left;
+  }
+}
+
+.table__head {
+  background-color: @table-head-color;
+}
+
+.table__body >.table__row {
+  color: @standart-black;
+
+  &:nth-child(even) {
+    background-color: @table-even-color;
+  }
+
+  &:nth-child(odd) {
+    background-color: @table-odd-color;
+  }
+}
+
+.table__item {
+  text-align: center;
+  vertical-align: baseline;
+  padding: 20px;
+  font-size: 18px;
+  letter-spacing: 1px;
+
+  @media (max-width: @tablet-width) {
+    font-size: 17px;
+    padding: 15px;
+  }
+
+  @media (max-width: @mobile-width) {
+    font-size: 15px;
+    padding: 10px;
+  }
+}
