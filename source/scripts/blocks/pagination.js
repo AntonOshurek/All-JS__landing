@@ -21,10 +21,10 @@ export  default function pagination() {
 
   let notesOnPage = 5;
 
-  function showPaginationBtns() {
+  function createPaginationBtns() {
     const paginationControls = document.querySelector('.pagination-controls');
     let btns;
-    for(let i = 0; i < users.length / notesOnPage; i++) {
+    for(let i = 0; i < Math.ceil(users.length / notesOnPage); i++) {
       btns += `
         <li class="pagination-controls__elem">
           <button class="pagination-controls__btn" type="button">${i + 1}</button>
@@ -33,24 +33,25 @@ export  default function pagination() {
       paginationControls.innerHTML = btns;
     };
   };
-  showPaginationBtns();
+  createPaginationBtns();
 
   const paginationBtns = document.querySelectorAll('.pagination-controls__btn');
-
   paginationBtns.forEach(btn => {
     btn.addEventListener('click', function() {
-      buttonLabeling(this);
-      let pageNum = +this.innerHTML; //get page number
-
-      let start = (pageNum - 1) * notesOnPage;
-      let end = start + notesOnPage;
-
-      let notes = users.slice(start, end);
-
-      console.log(notes);
-      showPaginationList(notes);
+      searchPaginationList(this);
     })
   });
+
+  function searchPaginationList(event = paginationBtns[0]) {
+    buttonLabeling(event);
+    let pageNum = +event.innerHTML; //get page number
+    let start = (pageNum - 1) * notesOnPage;
+    let end = start + notesOnPage;
+    let notes = users.slice(start, end);
+
+    showPaginationList(notes);
+  };
+  searchPaginationList();
 
   function buttonLabeling(button) {
     paginationBtns.forEach(btn => {
@@ -62,7 +63,6 @@ export  default function pagination() {
   function showPaginationList(notes) {
     const tableBody = document.querySelector('.table__body');
     let list;
-
     notes.forEach(elem => {
       list += `
       <tr class="table__row">
@@ -73,9 +73,14 @@ export  default function pagination() {
       `;
 
       tableBody.innerHTML = list;
-      console.log(list);
     });
-
+    tableHeightProp(tableBody)
   };
+
+  function tableHeightProp(tableBody) {
+    const tableHeight = window.getComputedStyle(document.querySelector('.table__row')).height;
+    const height = +tableHeight.slice(0, tableHeight.length - 2) * notesOnPage;
+    tableBody.style.height = `${height}px`;
+  }
 };
 
