@@ -5,20 +5,19 @@ export default function tabs() {
     let tabName;
 
     tabButton.forEach(btn => {
-        btn.addEventListener('click', selectTabNav)
+      btn.addEventListener('click', selectTabNav)
     });
 
     function selectTabNav() {
-        tabName = this.getAttribute('data-tab-name');
-        selectTabContent(tabName);
+      tabName = this.getAttribute('data-tab-name');
+      selectTabContent(tabName);
     }
 
     function selectTabContent(tabName) {
-        tab.forEach(item => {
-            item.classList.contains(tabName) ? item.classList.add('tab--current') : item.classList.remove('tab--current');
-        })
+      tab.forEach(item => {
+        item.classList.contains(tabName) ? item.classList.add('tab--current') : item.classList.remove('tab--current');
+      })
     }
-};
-
-tab();
+  };
+  tab();
 };
