@@ -99,11 +99,19 @@
 
 .pagination-controls__btn {
   width: 50px;
-  height: 30px;
+  height: 50px;
   background-color: transparent;
   border: 3px solid @standart-black;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 5px;
+  cursor: pointer;
+  font-family: "PT Sans", "Arial", sans-serif;
+
+  &:hover,
+  &:focus {
+    font-size: 22px;
+    font-weight: bold;
+  }
 }
