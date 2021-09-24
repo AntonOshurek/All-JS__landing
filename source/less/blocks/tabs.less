@@ -1,0 +1,106 @@
+.tabs {
+  padding: 20px 20px;
+  display: grid;
+  grid-template-rows: 1fr min-content;
+  grid-row-gap: 20px;
+  justify-items: center;
+}
+
+.tab {
+  display: none;
+
+  &--current {
+    display: block;
+  }
+}
+
+.tab__wrap {
+  display: grid;
+  grid-template-columns: 100px 500px;
+  grid-column-gap: 25px;
+  width: 100%;
+
+  @media (max-width: 622px) {
+    grid-template-rows: min-content 1fr;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+  }
+}
+
+.tab__title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+
+  @media (max-width: 622px) {
+    align-items: center;
+  }
+}
+
+.tab__img {
+  align-self: center;
+  object-fit: contain;
+  background-color: #fff;
+  width: 100%;
+  height: 200px;
+
+  @media (max-width: 622px) {
+    width: 100%;
+    height: 200px;
+  }
+}
+
+/*tabs controls radio btn styles*/
+.tabs-controls {
+  justify-self: center;
+  border: none;
+  width: min-content;
+  display: grid;
+  grid-template-columns: repeat(3, min-content);
+  grid-column-gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.tabs-controls__btn {
+  position: absolute;
+  appearance: none;
+
+  &:checked ~ .tabs-controls__custom-elem::before{
+    position: absolute;
+    content: '';
+    width: 25px;
+    height: 25px;
+    background-color: #C0C0C0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+  }
+}
+
+.tabs-controls__btn[data-tab-name="tab-3"]:checked ~ .tabs-controls__custom-elem::before{
+  background-color: #FFFF00;
+}
+.tabs-controls__btn[data-tab-name="tab-2"]:checked ~ .tabs-controls__custom-elem::before{
+  background-color: #0000FF;
+}
+.tabs-controls__btn[data-tab-name="tab-1"]:checked ~ .tabs-controls__custom-elem::before{
+  background-color: tomato;
+}
+
+.tabs-controls__label {
+  display: flex;
+}
+
+.tabs-controls__custom-elem {
+  width: 48px;
+  height: 48px;
+  margin-right: 23px;
+  background-color: #AFEEEE;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+  margin: 0;
+}

@@ -100,50 +100,110 @@
           <div class="sliderfull-items__item">
             <picture>
               <source srcset="img/slider-n/slide-n1@x1.webp,
-                              img/slider-n/slide-n1@x2.webp"
+                              img/slider-n/slide-n1@x2.webp 2x"
                       type="image/webp">
               <img class="sliderfull-items__img" width="500px" height="300px"
                 src="img/slider-n/slide-n1@x1.jpeg"
-                srcset="img/slider-n/slide-n1@x2.jpeg"
+                srcset="img/slider-n/slide-n1@x2.jpeg 2x"
                 alt="slide 1">
             </picture>
           </div>
           <div class="sliderfull-items__item">
             <picture>
               <source srcset="img/slider-n/slide-n2@x1.webp,
-                              img/slider-n/slide-n2@x2.webp"
+                              img/slider-n/slide-n2@x2.webp 2x"
                       type="image/webp">
               <img class="sliderfull-items__img" width="500px" height="300px"
                 src="img/slider-n/slide-n2@x1.jpeg"
-                srcset="img/slider-n/slide-n2@x2.jpeg"
+                srcset="img/slider-n/slide-n2@x2.jpeg 2x"
                 alt="slide 2">
             </picture>
           </div>
           <div class="sliderfull-items__item">
             <picture>
               <source srcset="img/slider-n/slide-n3@x1.webp,
-                              img/slider-n/slide-n3@x2.webp"
+                              img/slider-n/slide-n3@x2.webp 2x"
                       type="image/webp">
               <img class="sliderfull-items__img" width="500px" height="300px"
                 src="img/slider-n/slide-n3@x1.jpeg"
-                srcset="img/slider-n/slide-n3@x2.jpeg"
+                srcset="img/slider-n/slide-n3@x2.jpeg 2x"
                 alt="slide 3">
             </picture>
           </div>
           <div class="sliderfull-items__item">
             <picture>
               <source srcset="img/slider-n/slide-n4@x1.webp,
-                              img/slider-n/slide-n4@x2.webp"
+                              img/slider-n/slide-n4@x2.webp 2x"
                       type="image/webp">
               <img class="sliderfull-items__img" width="500px" height="300px"
                 src="img/slider-n/slide-n4@x1.jpeg"
-                srcset="img/slider-n/slide-n4@x2.jpeg"
+                srcset="img/slider-n/slide-n4@x2.jpeg 2x"
                 alt="slide 4">
             </picture>
           </div>
         </div>
       </div>
     </section>
+
+    <section class="tabs">
+      <div class="tab tab--current tab-1" data-tab-name="tab-1">
+        <div class="tab__wrap">
+          <div class="tab__title">
+            <h3>HTML</h3>
+            <p>tabs</p>
+          </div>
+          <picture>
+            <source srcset="img/tabs/tab-1.webp"
+            type="image/webp">
+            <img class="tab__img" src="img/tabs/tab-1.jpg"
+                 width="300" height="100" alt="html markup">
+          </picture>
+        </div>
+      </div>
+      <div class="tab tab-2" data-tab-name="tab-2">
+        <div class="tab__wrap">
+          <div class="tab__title">
+            <h3>CSS</h3>
+            <p>tabs</p>
+          </div>
+          <picture>
+            <source srcset="img/tabs/tab-2.webp"
+            type="image/webp">
+            <img class="tab__img" src="img/tabs/tab-2.jpg"
+                 width="300" height="100" alt="css code">
+          </picture>
+        </div>
+      </div>
+      <div class="tab tab-3" data-tab-name="tab-3">
+        <div class="tab__wrap">
+          <div class="tab__title">
+            <h3>JAVASCRIPT</h3>
+            <p>tabs</p>
+          </div>
+          <picture>
+            <source srcset="img/tabs/tab-3.webp"
+            type="image/webp">
+            <img class="tab__img" src="img/tabs/tab-3.jpg"
+                 width="300" height="100" alt="javascript scripts">
+          </picture>
+        </div>
+      </div>
+      <fieldset class="tabs-controls">
+        <legend class="tabs-controls__title visually-hidden">tabs controls</legend>
+        <label class="tabs-controls__label">
+          <input class="tabs-controls__btn" type="radio" name="tabs-controls" data-tab-name="tab-1" aria-label="html tab">
+          <span class="tabs-controls__custom-elem"></span>
+        </label>
+        <label class="tabs-controls__label">
+          <input class="tabs-controls__btn" type="radio" name="tabs-controls" data-tab-name="tab-2" aria-label="css tab">
+          <span class="tabs-controls__custom-elem"></span>
+        </label>
+        <label class="tabs-controls__label">
+          <input class="tabs-controls__btn" type="radio" name="tabs-controls" data-tab-name="tab-3" aria-label="javascript tab">
+          <span class="tabs-controls__custom-elem"></span>
+        </label>
+      </fieldset>
+  </section>
 
   </main>
   <footer class="footer">
