@@ -1,8 +1,8 @@
 .tabs {
-  margin: 0 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding: 20px 20px;
+  display: grid;
+  grid-template-rows: 1fr min-content;
+  grid-row-gap: 20px;
 }
 
 .tab {
@@ -15,14 +15,14 @@
 
 .tab__wrap {
   display: grid;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 100px 500px;
   grid-column-gap: 25px;
   width: 100%;
-  padding: 20px 0;
 
-  @media (min-width: 622px) {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
+  @media (max-width: 622px) {
+    grid-template-rows: min-content 1fr;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
   }
 }
 
@@ -30,28 +30,29 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
 
-  @media (min-width: 622px) {
-    align-items: flex-end;
+  @media (max-width: 622px) {
+    align-items: center;
   }
 }
 
 .tab__img {
   align-self: center;
-  object-fit: cover;
+  object-fit: contain;
   background-color: #fff;
-  width: 100px;
-  height: 100px;
+  width: 100%;
+  height: 200px;
 
-  @media (min-width: 622px) {
-    width: 200px;
+  @media (max-width: 622px) {
+    width: 100%;
     height: 200px;
   }
 }
 
 /*tabs controls radio btn styles*/
 .tabs-controls {
+  justify-self: center;
   border: none;
   width: min-content;
   display: grid;
@@ -63,21 +64,19 @@
 
 .tabs-controls__btn {
   position: absolute;
-  -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
-}
 
-.tabs-controls__btn:checked ~ .tabs-controls__custom-elem::before{
-  position: absolute;
-  content: '';
-  width: 25px;
-  height: 25px;
-  background-color: #C0C0C0;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
+  &:checked ~ .tabs-controls__custom-elem::before{
+    position: absolute;
+    content: '';
+    width: 25px;
+    height: 25px;
+    background-color: #C0C0C0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+  }
 }
 
 .tabs-controls__btn[data-tab-name="tab-3"]:checked ~ .tabs-controls__custom-elem::before{
