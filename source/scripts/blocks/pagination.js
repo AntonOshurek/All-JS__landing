@@ -20,14 +20,65 @@ export  default function pagination() {
   ];
 
   const paginationBtns = document.querySelectorAll('.pagination-controls__btn');
+  const tableBody = document.querySelector('.table__body');
+  const paginationControls = document.querySelector('.pagination-controls');
 
-  let notesOnPage = 3;
+  let notesOnPage = 5;
+
+  /*function showPaginationBtns() {
+    let btns;
+    for(let i = 0; i < users.length / notesOnPage; i++) {
+      btns += `
+        <li class="pagination-controls__elem">
+          <button class="pagination-controls__btn" type="button">${i + 1}</button>
+        </li>
+      `;
+
+      paginationControls.innerHTML = btns;
+      listenPagBtns();
+    };
+
+  };
+  showPaginationBtns();*/
 
   paginationBtns.forEach(btn => {
     btn.addEventListener('click', function() {
+      buttonLabeling(this);
       let pageNum = +this.innerHTML; //get page number
-      
+
+      let start = (pageNum - 1) * notesOnPage;
+      let end = start + notesOnPage;
+
+      let notes = users.slice(start, end);
+
+      console.log(notes);
+      showPaginationList(notes);
     })
-  })
+  });
+
+  function buttonLabeling(button) {
+    paginationBtns.forEach(btn => {
+      btn.classList.remove('pagination-controls__btn--active');
+    });
+    button.classList.add('pagination-controls__btn--active');
+  };
+
+  function showPaginationList(notes) {
+    let list;
+
+    notes.forEach(elem => {
+      list += `
+      <tr class="table__row">
+        <th class="table__item table__item--row" scope="row">${elem.name}</th>
+        <td class="table__item">${elem.surname}</td>
+        <td class="table__item">${elem.age}</td>
+      </tr>
+      `;
+
+      tableBody.innerHTML = list;
+      console.log(list);
+    });
+
+  };
 };
 
