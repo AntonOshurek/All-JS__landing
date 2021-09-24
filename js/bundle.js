@@ -2,6 +2,52 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./source/scripts/blocks/popup.js":
+/*!****************************************!*\
+  !*** ./source/scripts/blocks/popup.js ***!
+  \****************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ popup; }
+/* harmony export */ });
+function popup() {
+  const body = document.querySelector('.body');
+  const popupOpenBtn = document.querySelector('.popup-block__btn');
+  const popup = document.querySelector('.popup');
+  const popupArea = document.querySelector('.popup__area');
+  const popupCloseBtn = document.querySelector('.popup__close-btn');
+
+  const closeModal = e => {
+    e.preventDefault();
+    popup.classList.remove('popup--target');
+    body.classList.remove("body--scrolloff");
+  };
+
+  const openModal = e => {
+    e.preventDefault();
+    popup.classList.add('popup--target');
+    body.classList.add("body--scrolloff");
+    popupCloseBtn.focus();
+    modalKeyOpt();
+  };
+
+  function modalKeyOpt() {
+    window.onkeydown = event => {
+      if (event.keyCode == 27) closeModal(event);
+    };
+  }
+
+  ;
+  popupOpenBtn.addEventListener('click', e => openModal(e));
+  popupCloseBtn.addEventListener('click', e => closeModal(e));
+  popupArea.addEventListener('click', e => closeModal(e));
+}
+;
+
+/***/ }),
+
 /***/ "./source/scripts/blocks/slider.js":
 /*!*****************************************!*\
   !*** ./source/scripts/blocks/slider.js ***!
@@ -273,6 +319,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _blocks_slider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./blocks/slider */ "./source/scripts/blocks/slider.js");
 /* harmony import */ var _blocks_sliderfull__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./blocks/sliderfull */ "./source/scripts/blocks/sliderfull.js");
 /* harmony import */ var _blocks_tabs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./blocks/tabs */ "./source/scripts/blocks/tabs.js");
+/* harmony import */ var _blocks_popup__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./blocks/popup */ "./source/scripts/blocks/popup.js");
+
 
 
 
@@ -280,6 +328,7 @@ window.addEventListener('DOMContentLoaded', () => {
   (0,_blocks_slider__WEBPACK_IMPORTED_MODULE_0__["default"])();
   (0,_blocks_sliderfull__WEBPACK_IMPORTED_MODULE_1__["default"])();
   (0,_blocks_tabs__WEBPACK_IMPORTED_MODULE_2__["default"])();
+  (0,_blocks_popup__WEBPACK_IMPORTED_MODULE_3__["default"])();
 });
 }();
 /******/ })()
