@@ -168,6 +168,43 @@ function sliderFull() {
 }
 ;
 
+/***/ }),
+
+/***/ "./source/scripts/blocks/tabs.js":
+/*!***************************************!*\
+  !*** ./source/scripts/blocks/tabs.js ***!
+  \***************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ tabs; }
+/* harmony export */ });
+function tabs() {
+  const tab = function () {
+    const tab = document.querySelectorAll('.tab');
+    const tabButton = document.querySelectorAll('.tabs-controls__btn');
+    let tabName;
+    tabButton.forEach(btn => {
+      btn.addEventListener('click', selectTabNav);
+    });
+
+    function selectTabNav() {
+      tabName = this.getAttribute('data-tab-name');
+      selectTabContent(tabName);
+    }
+
+    function selectTabContent(tabName) {
+      tab.forEach(item => {
+        item.classList.contains(tabName) ? item.classList.add('tab--current') : item.classList.remove('tab--current');
+      });
+    }
+  };
+
+  tab();
+}
+;
+
 /***/ })
 
 /******/ 	});
@@ -235,11 +272,14 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _blocks_slider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./blocks/slider */ "./source/scripts/blocks/slider.js");
 /* harmony import */ var _blocks_sliderfull__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./blocks/sliderfull */ "./source/scripts/blocks/sliderfull.js");
+/* harmony import */ var _blocks_tabs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./blocks/tabs */ "./source/scripts/blocks/tabs.js");
+
 
 
 window.addEventListener('DOMContentLoaded', () => {
   (0,_blocks_slider__WEBPACK_IMPORTED_MODULE_0__["default"])();
   (0,_blocks_sliderfull__WEBPACK_IMPORTED_MODULE_1__["default"])();
+  (0,_blocks_tabs__WEBPACK_IMPORTED_MODULE_2__["default"])();
 });
 }();
 /******/ })()
