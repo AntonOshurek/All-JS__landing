@@ -154,6 +154,8 @@ function pagination() {
     const height = +tableHeight.slice(0, tableHeight.length - 2) * notesOnPage;
     tableBody.style.height = `${height}px`;
   }
+
+  ;
 }
 ;
 
