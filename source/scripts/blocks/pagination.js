@@ -23,7 +23,7 @@ export  default function pagination() {
 
   function createPaginationBtns() {
     const paginationControls = document.querySelector('.pagination-controls');
-    let btns;
+    let btns = [];
     for(let i = 0; i < Math.ceil(users.length / notesOnPage); i++) {
       btns += `
         <li class="pagination-controls__elem">
@@ -62,7 +62,8 @@ export  default function pagination() {
 
   function showPaginationList(notes) {
     const tableBody = document.querySelector('.table__body');
-    let list;
+    let list = [];
+
     notes.forEach(elem => {
       list += `
       <tr class="table__row">
@@ -71,8 +72,7 @@ export  default function pagination() {
         <td class="table__item">${elem.age}</td>
       </tr>
       `;
-
-      tableBody.innerHTML = list;
+      tableBody.innerHTML = list ;
     });
     tableHeightProp(tableBody)
   };
