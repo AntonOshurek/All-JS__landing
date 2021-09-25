@@ -37,6 +37,10 @@
   }
 }
 
+.table__body {
+ //height: min-content;
+}
+
 .table__title {
   font-family: "PT Sans", "Arial", sans-serif;
   font-size: 26px;
@@ -72,6 +76,20 @@
   padding: 20px;
   font-size: 18px;
   letter-spacing: 1px;
+  height: 70px;
+
+  &:nth-child(1) {
+    width: 35%;
+    text-align: left;
+  }
+
+  &:nth-child(2) {
+    width: 40%;
+  }
+
+  &:nth-child(3) {
+    width: 25%;
+  }
 
   @media (max-width: @tablet-width) {
     font-size: 17px;
