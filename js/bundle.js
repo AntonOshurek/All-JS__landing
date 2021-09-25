@@ -86,7 +86,7 @@ function pagination() {
 
   function createPaginationBtns() {
     const paginationControls = document.querySelector('.pagination-controls');
-    let btns;
+    let btns = [];
 
     for (let i = 0; i < Math.ceil(users.length / notesOnPage); i++) {
       btns += `
@@ -133,7 +133,7 @@ function pagination() {
 
   function showPaginationList(notes) {
     const tableBody = document.querySelector('.table__body');
-    let list;
+    let list = [];
     notes.forEach(elem => {
       list += `
       <tr class="table__row">
