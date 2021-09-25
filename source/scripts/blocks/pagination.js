@@ -39,7 +39,7 @@ export  default function pagination() {
   paginationBtns.forEach(btn => {
     btn.addEventListener('click', function() {
       searchPaginationList(this);
-    })
+    });
   });
 
   function searchPaginationList(event = paginationBtns[0]) {
@@ -81,6 +81,6 @@ export  default function pagination() {
     const tableHeight = window.getComputedStyle(document.querySelector('.table__row')).height;
     const height = +tableHeight.slice(0, tableHeight.length - 2) * notesOnPage;
     tableBody.style.height = `${height}px`;
-  }
+  };
 };
 
