@@ -1,6 +1,14 @@
 export  default function pagination() {
+
+  const getRandomInt = (minValue, maxValue) => {
+    if((Math.sign(minValue) === -1) || (Math.sign(maxValue) === -1) || minValue >= maxValue) {
+        throw new Error('minValue or maxValue they have the wrong value');
+    }
+    return Math.floor(Math.random() * (maxValue - minValue + 1)) + minValue;
+};
+
   let users = [
-    {name: 'name1', surname: 'surname1', age: 30},
+    /*{name: 'name1', surname: 'surname1', age: 30},
     {name: 'name2', surname: 'surname2', age: 30},
     {name: 'name3', surname: 'surname3', age: 30},
     {name: 'name4', surname: 'surname4', age: 30},
@@ -16,8 +24,26 @@ export  default function pagination() {
     {name: 'name14', surname: 'surname14', age: 30},
     {name: 'name15', surname: 'surname15', age: 30},
     {name: 'name16', surname: 'surname16', age: 30},
-    {name: 'name17', surname: 'surname17', age: 30},
+    {name: 'name17', surname: 'surname17', age: 30},*/
   ];
+
+  class User {
+    constructor(name, surname, age) {
+      this.name = name;
+      this.surname = surname;
+      this.age = age;
+    }
+  }
+
+  const numberOfNotes = 20;
+
+  function pushToUsers(value) {
+    for(let i = 0; i < value; i++) {
+      const user = new User(`name ${i}`, `surname ${i}`, getRandomInt(15, 50));
+      users.push(user);
+    }
+  };
+  pushToUsers(numberOfNotes);
 
   let notesOnPage = 5;
 
