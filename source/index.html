@@ -12,25 +12,25 @@
     <nav class="nav">
       <ul class="nav__list">
         <li class="nav__elem">
-          <a class="nav__link" href=""><nobr>slider 1</nobr> </a>
+          <a class="nav__link" href="#slider"><nobr>slider 1</nobr> </a>
         </li>
         <li class="nav__elem">
-          <a class="nav__link" href=""><nobr>slider full</nobr></a>
+          <a class="nav__link" href="#sliderfull"><nobr>slider full</nobr></a>
         </li>
         <li class="nav__elem">
-          <a class="nav__link" href="">Tabs</a>
+          <a class="nav__link" href="#tabs">Tabs</a>
         </li>
         <li class="nav__elem">
-          <a class="nav__link" href="">modal</a>
+          <a class="nav__link" href="#popup-block">popup-block</a>
         </li>
         <li class="nav__elem">
-          <a class="nav__link" href="">pagination</a>
+          <a class="nav__link" href="#pagination">pagination</a>
         </li>
       </ul>
     </nav>
   </header>
   <main class="main">
-    <section class="slider">
+    <section class="slider" id="slider">
       <div class="sleder-controls">
         <button class="sleder-controls__button sleder-controls__button--prev" type="button"><span class="visually-hidden">left</span>
           <svg class="sleder-controls__button-img" aria-hidden="true" focusable="false" width="38" height="5" viewBox="0 0 38 5" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -95,7 +95,7 @@
       </div>
     </section>
 
-    <section class="sliderfull">
+    <section class="sliderfull" id="sliderfull">
       <div class="slederfull-controls">
         <span class="slederfull-controls__total slederfull-controls__total--current">01</span>
         <span class="slederfull-controls__total slederfull-controls__total--total">04</span>
@@ -163,7 +163,7 @@
       </div>
     </section>
 
-    <section class="tabs">
+    <section class="tabs" id="tabs">
       <div class="tab tab--current tab-1" data-tab-name="tab-1">
         <div class="tab__wrap">
           <div class="tab__title">
@@ -223,7 +223,7 @@
       </fieldset>
   </section>
 
-  <section class="popup-block">
+  <section class="popup-block" id="popup-block">
     <button class="popup-block__btn" type="button">open modal</button>
     <div class="popup">
       <div class="popup__area"></div>
@@ -240,7 +240,7 @@
     </div>
   </section>
 
-  <section class="pagination">
+  <section class="pagination" id="pagination">
     <table class="table">
       <caption class="table__title">pagination table</caption>
       <thead class="table__head">
