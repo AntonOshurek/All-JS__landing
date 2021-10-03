@@ -5,7 +5,7 @@
 
 //burger button
 .nav__btn{
-  display: none;
+  //display: none;
   position: relative;
   width: 80px;
   height: 80px;
@@ -15,9 +15,22 @@
   margin: 0;
   padding: 0;
 
-  @media (max-width: @tablet-width) {
+  /*@media (max-width: @tablet-width) {
     display: block;
-  }
+  }*/
+}
+
+.nav__btn--open .nav__btn-burger {
+  transform: translateX(-50px);
+  background: transparent;
+}
+
+.nav__btn--open .nav__btn-burger::before {
+  transform: rotate(-45deg) translate(35px, -35px);
+}
+
+.nav__btn--open .nav__btn-burger::before {
+  transform: rotate(45deg) translate(35px, 35px);
 }
 
 .nav__btn-burger {
