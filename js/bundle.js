@@ -13,75 +13,39 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": function() { return /* binding */ pagination; }
 /* harmony export */ });
 function pagination() {
-  let users = [{
-    name: 'name1',
-    surname: 'surname1',
-    age: 30
-  }, {
-    name: 'name2',
-    surname: 'surname2',
-    age: 30
-  }, {
-    name: 'name3',
-    surname: 'surname3',
-    age: 30
-  }, {
-    name: 'name4',
-    surname: 'surname4',
-    age: 30
-  }, {
-    name: 'name5',
-    surname: 'surname5',
-    age: 30
-  }, {
-    name: 'name6',
-    surname: 'surname6',
-    age: 30
-  }, {
-    name: 'name7',
-    surname: 'surname7',
-    age: 30
-  }, {
-    name: 'name8',
-    surname: 'surname8',
-    age: 30
-  }, {
-    name: 'name9',
-    surname: 'surname9',
-    age: 30
-  }, {
-    name: 'name10',
-    surname: 'surname10',
-    age: 30
-  }, {
-    name: 'name11',
-    surname: 'surname11',
-    age: 30
-  }, {
-    name: 'name12',
-    surname: 'surname12',
-    age: 30
-  }, {
-    name: 'name13',
-    surname: 'surname13',
-    age: 30
-  }, {
-    name: 'name14',
-    surname: 'surname14',
-    age: 30
-  }, {
-    name: 'name15',
-    surname: 'surname15',
-    age: 30
-  }, {
-    name: 'name16',
-    surname: 'surname16',
-    age: 30
-  }, {
-    name: 'name17',
-    surname: 'surname17',
-    age: 30
-  }];
+  const getRandomInt = (minValue, maxValue) => {
+    if (Math.sign(minValue) === -1 || Math.sign(maxValue) === -1 || minValue >= maxValue) {
+      throw new Error('minValue or maxValue they have the wrong value');
+    }
+
+    return Math.floor(Math.random() * (maxValue - minValue + 1)) + minValue;
+  };
+
+  const usersNames = ['Abraham', 'Addison', 'Adrian', 'Albert', 'Alec', 'Alfred', 'Alvin', 'Andrew', 'Andy', 'Archibald', 'Archie', 'Arlo', 'Arthur', 'Arthur', 'Austen', 'Barnabe', 'Bartholomew', 'Bertram', 'Bramwell', 'Byam', 'Cardew', 'Chad', 'Chance', 'Colin', 'Coloman', 'Curtis', 'Cuthbert', 'Daniel', 'Darryl', 'David', 'Dickon', 'Donald', 'Dougie', 'Douglas', 'Earl', 'Ebenezer', 'Edgar', 'Edmund', 'Edward', 'Edwin', 'Elliot', 'Emil', 'Floyd', 'Franklin', 'Frederick', 'Gabrie', 'Galton', 'Gareth', 'George', 'Gerard', 'Gilbert', 'Gorden', 'Gordon', 'Graham', 'Grant', 'Henry', 'Hervey', 'Hudson', 'Hugh', 'Ian', 'Jack', 'Jaime', 'James', 'Jason', 'Jeffrey', 'Joey', 'John', 'Jolyon', 'Jonas', 'Joseph', 'Joshua', 'Julian', 'Justin', 'Kurt', 'Lanny', 'Larry', 'Laurence', 'Lawton', 'Lester', 'Malcolm', 'Marcus', 'Mark', 'Marshall', 'Martin', 'Marvin', 'Matt', 'Maximilian', 'Michael', 'Miles', 'Murray', 'Myron', 'Nate', 'Nathan', 'Neil', 'Nicholas', 'Nicolas', 'Norman', 'Oliver', 'Oscar', 'Osric', 'Owen', 'Patrick', 'Paul', 'Peleg', 'Philip', 'Phillipps', 'Raymond', 'Reginald', 'Rhys', 'Richard', 'Robert', 'Roderick', 'Rodger', 'Roger', 'Ronald', 'Rowland', 'Rufus', 'Russell', 'Sebastian', 'Shahaf', 'Simon', 'Stephen', 'Swaine', 'Thomas', 'Tobias', 'Travis', 'Victor', 'Vincent', 'Vincent', 'Vivian', 'Wayne', 'Wilfred', 'William', 'Winston', 'Zadoc'];
+  const citys = ['Абаза', 'Абакан', 'Абдулино', 'Абинск', 'Агидель', 'Гдов', 'Геленджик', 'Георгиевск', 'Глазов', 'Голицыно', 'Киселёвск', 'Кисловодск', 'Клин', 'НовыйУренгой', 'Ногинск', 'Нолинск', 'Норильск', 'Ноябрьск', 'Нурлат', 'Нытва', 'Нюрба', 'Нягань', 'Нязепетровск', 'Няндома', 'Облучье', 'Обнинск', 'Обоянь', 'Обь', 'Североуральск', 'Трёхгорный', 'Усолье', 'Лабинск', 'Уссурийск'];
+  let users = [];
+
+  class User {
+    constructor(name, city, age) {
+      this.name = name;
+      this.city = city;
+      this.age = age;
+    }
+
+  }
+
+  ;
+  const numberOfNotes = 32;
+
+  function pushToUsers(value) {
+    for (let i = 0; i < value; i++) {
+      const user = new User(usersNames[getRandomInt(0, usersNames.length - 1)], citys[getRandomInt(0, citys.length - 1)], getRandomInt(15, 50));
+      users.push(user);
+    }
+  }
+
+  ;
+  pushToUsers(numberOfNotes);
   let notesOnPage = 5;
 
   function createPaginationBtns() {
@@ -138,7 +102,7 @@ function pagination() {
       list += `
       <tr class="table__row">
         <th class="table__item table__item--row" scope="row">${elem.name}</th>
-        <td class="table__item">${elem.surname}</td>
+        <td class="table__item">${elem.city}</td>
         <td class="table__item">${elem.age}</td>
       </tr>
       `;
