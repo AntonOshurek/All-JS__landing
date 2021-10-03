@@ -7,6 +7,9 @@
 .nav__btn{
   //display: none;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 80px;
   height: 80px;
   transition: all 0.5s ease-in-out;
@@ -20,21 +23,11 @@
   }*/
 }
 
-.nav__btn--open .nav__btn-burger {
-  transform: translateX(-50px);
-  background: transparent;
-}
-
-.nav__btn--open .nav__btn-burger::before {
-  transform: rotate(-45deg) translate(35px, -35px);
-}
-
-.nav__btn--open .nav__btn-burger::before {
-  transform: rotate(45deg) translate(35px, 35px);
-}
-
 .nav__btn-burger {
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
   width: 50px;
   height: 6px;
   background-color: #000;
@@ -46,7 +39,6 @@
   &::after {
     content: '';
     position: absolute;
-    left: 50%;
     width: 50px;
     height: 6px;
     background-color: #000;
@@ -54,13 +46,27 @@
     transition: all 0.5s ease-in-out;
   }
 
-  &::after {
-    transform: translate(-50%, -16px;)
+  &::before {
+    transform: translateY(-16px;)
   }
 
-  &::before {
-    transform: translate(-50%, 16px);
+  &::after {
+    transform: translateY(16px);
   }
+}
+
+//for js logick
+.nav__btn--open .nav__btn-burger {
+  transform: translateX(-50px);
+  background: transparent;
+}
+
+.nav__btn--open .nav__btn-burger::before {
+  transform: rotate(45deg) translate(35px, -35px);
+}
+
+.nav__btn--open .nav__btn-burger::after {
+  transform: rotate(-45deg) translate(35px, 35px);
 }
 
 //navigation list and items
