@@ -5,11 +5,8 @@
 
 //burger button
 .nav__btn{
-  //display: none;
+  display: none;
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 80px;
   height: 80px;
   transition: all 0.5s ease-in-out;
@@ -19,11 +16,12 @@
   padding: 0;
 
   @media (max-width: @tablet-width) {
-    //display: block;
+    display: block;
   }
 }
 
 .nav__btn-burger {
+  display: inline-block;
   width: 50px;
   height: 6px;
   background-color: #000;
