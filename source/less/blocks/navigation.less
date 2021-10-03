@@ -4,8 +4,16 @@
 }
 
 //burger button
+
+.nav__btn-wrap {
+  display: none;
+
+  @media (max-width: @tablet-width) {
+    display: block;
+  }
+}
+
 .nav__btn{
-  //display: none;
   position: relative;
   display: flex;
   justify-content: center;
@@ -17,17 +25,12 @@
   background-color: transparent;
   margin: 0;
   padding: 0;
-
-  /*@media (max-width: @tablet-width) {
-    display: block;
-  }*/
 }
 
 .nav__btn-burger {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: absolute;
   width: 50px;
   height: 6px;
   background-color: #000;
