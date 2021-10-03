@@ -1,0 +1,36 @@
+.nav {
+  width: min-content;
+}
+
+.nav__list {
+  display: grid;
+  grid-template-columns: repeat(5, min-content);
+  grid-column-gap: 20px;
+}
+
+.nav__elem {
+  list-style: none;
+}
+
+.nav__link {
+  color: @standart-black;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  &:hover,
+  &:focus {
+    opacity: 0.9;
+    text-decoration: underline;
+    text-decoration-thickness: 4px;
+    color: tomato;
+  }
+
+  &:active {
+    opacity: 0.7;
+    text-decoration: underline;
+    text-decoration-thickness: 4px;
+    color: tomato;
+  }
+}

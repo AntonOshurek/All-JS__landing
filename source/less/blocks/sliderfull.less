@@ -1,13 +1,25 @@
 .sliderfull{
-  position: relative;
   width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: @background-two;
+
+  position: relative;
+}
+
+.sliderfull__wrap {
+  position: relative;
+
   padding: 20px 20px;
   display: grid;
   grid-gap: 10px;
   justify-items: center;
+  align-content: center;
   grid-template-columns: 1fr;
   grid-template-rows: min-content min-content;
-  background-color: @background-two;
 
   @media (max-width: 600px) {
     padding: 20px 0;
@@ -95,7 +107,7 @@ grid-column-gap: 20px;
   align-items: center;
   justify-content: center;
   position: absolute;
-  bottom: 40px;
+  bottom: 30px;
   left: 50%;
   transform: translateX(-50%);
 }
