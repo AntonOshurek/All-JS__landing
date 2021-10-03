@@ -2,6 +2,32 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./source/scripts/blocks/navigationBurgerBtn.js":
+/*!******************************************************!*\
+  !*** ./source/scripts/blocks/navigationBurgerBtn.js ***!
+  \******************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ navigationBurgerBtn; }
+/* harmony export */ });
+function navigationBurgerBtn() {
+  const navBtn = document.querySelector('.nav__btn');
+  let navOpen = false;
+  navBtn.addEventListener('click', () => {
+    if (!navOpen) {
+      navBtn.classList.add('nav__btn--open');
+      navOpen = true;
+    } else {
+      navBtn.classList.remove('nav__btn--open');
+      navOpen = false;
+    }
+  });
+}
+
+/***/ }),
+
 /***/ "./source/scripts/blocks/pagination.js":
 /*!*********************************************!*\
   !*** ./source/scripts/blocks/pagination.js ***!
@@ -444,12 +470,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _blocks_tabs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./blocks/tabs */ "./source/scripts/blocks/tabs.js");
 /* harmony import */ var _blocks_popup__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./blocks/popup */ "./source/scripts/blocks/popup.js");
 /* harmony import */ var _blocks_pagination__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./blocks/pagination */ "./source/scripts/blocks/pagination.js");
+/* harmony import */ var _blocks_navigationBurgerBtn__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./blocks/navigationBurgerBtn */ "./source/scripts/blocks/navigationBurgerBtn.js");
+
 
 
 
 
 
 window.addEventListener('DOMContentLoaded', () => {
+  (0,_blocks_navigationBurgerBtn__WEBPACK_IMPORTED_MODULE_5__["default"])();
   (0,_blocks_slider__WEBPACK_IMPORTED_MODULE_0__["default"])();
   (0,_blocks_sliderfull__WEBPACK_IMPORTED_MODULE_1__["default"])();
   (0,_blocks_tabs__WEBPACK_IMPORTED_MODULE_2__["default"])();
