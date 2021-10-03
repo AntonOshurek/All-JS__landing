@@ -1,11 +1,86 @@
 .nav {
   width: min-content;
+  //position: relative;
 }
 
+//burger button
+
+.nav__btn-wrap {
+  display: none;
+
+  @media (max-width: @tablet-width) {
+    display: block;
+  }
+}
+
+.nav__btn{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  transition: all 0.5s ease-in-out;
+  border: none;
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__btn-burger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 6px;
+  background-color: #000;
+  border: none;
+  border-radius: 5px;
+  transition: all 0.5s ease-in-out;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 6px;
+    background-color: #000;
+    border-radius: 5px;
+    transition: all 0.5s ease-in-out;
+  }
+
+  &::before {
+    transform: translateY(-16px;)
+  }
+
+  &::after {
+    transform: translateY(16px);
+  }
+}
+
+//for js logick
+.nav__btn--open .nav__btn-burger {
+  transform: translateX(-50px);
+  background: transparent;
+}
+
+.nav__btn--open .nav__btn-burger::before {
+  transform: rotate(45deg) translate(35px, -35px);
+}
+
+.nav__btn--open .nav__btn-burger::after {
+  transform: rotate(-45deg) translate(35px, 35px);
+}
+
+//navigation list and items
 .nav__list {
   display: grid;
   grid-template-columns: repeat(5, min-content);
   grid-column-gap: 20px;
+
+  @media (max-width: @tablet-width) {
+    display: none;
+  }
 }
 
 .nav__elem {
