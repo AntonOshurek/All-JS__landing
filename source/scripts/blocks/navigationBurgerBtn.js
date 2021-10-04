@@ -29,6 +29,16 @@ export  default function navigationBurgerBtn() {
       });
     });
 
+    noTouchBG.addEventListener('click', () => {
+      closeNavigation();
+    });
+
+    window.addEventListener('resize', (e) => {
+      if (window.screen.width > 900) {
+        closeNavigation();
+      };
+    });
+
     navOpen = true;
   };
 
@@ -40,12 +50,5 @@ export  default function navigationBurgerBtn() {
     noTouchBG.classList.remove('nav__background-notouch--on');
     navOpen = false;
   };
-
-  window.addEventListener('resize', (e) => {
-    const screenWidth = window.screen.width;
-    if (screenWidth > 900) {
-      closeNavigation();
-    };
-  });
 
 }
