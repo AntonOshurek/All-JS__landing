@@ -1,9 +1,7 @@
 export default function scrollup() {
-  const scrollup = document.querySelector('.scrollup');
-  const scrollupBtn = document.querySelector('.scrollup__btn');
-
-
-  window.addEventListener('scroll', showUpBtn);
+  const fastscroll = document.querySelector('.fastscroll');
+  const scrollUpBtn = document.querySelector('.fastscroll__btn--up');
+  const scrollDownBtn = document.querySelector('.fastscroll__btn--down');
 
   const scrollHeight = Math.max(
     document.body.scrollHeight, document.documentElement.scrollHeight,
@@ -11,19 +9,27 @@ export default function scrollup() {
     document.body.clientHeight, document.documentElement.clientHeight
   );
 
+  window.addEventListener('scroll', showUpBtn);
 
   function showUpBtn() {
     if (window.pageYOffset > 500) {
-      scrollup.classList.add('scrollup--open');
-      scrollDown()
+      fastscroll.classList.add('fastscroll--open');
+      scrollUp();
+      scrollDown();
     } else {
-      scrollup.classList.remove('scrollup--open');
+      fastscroll.classList.remove('fastscroll--open');
     }
   };
 
-  function scrollDown() {
-    scrollupBtn.addEventListener('click', () => {
+  function scrollUp() {
+    scrollUpBtn.addEventListener('click', () => {
       window.scrollTo(0,0);
     })
-  }
+  };
+
+  function scrollDown() {
+    scrollDownBtn.addEventListener('click', () => {
+      window.scrollTo(0,scrollHeight);
+    })
+  };
 }
