@@ -89,11 +89,17 @@
   height: 100%;
 
   @media (max-width: @tablet-width) {
-    display: none;
+    //display: none;
+    transition: all 0.5s ease-in-out;
+    opacity: 0;
+    pointer-events: none;
   }
 
   &--open {
-    display: block;
+    //display: block;
+    transition: all 0.5s ease-in-out;
+    opacity: 1;
+    pointer-events: visible;
   }
 }
 
@@ -106,7 +112,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    padding: 20px 10px;
+    padding: 80px 10px 20px 10px;
     width: 100%;
     height: min-content;
 
