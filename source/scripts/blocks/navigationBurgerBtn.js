@@ -15,21 +15,20 @@ export  default function navigationBurgerBtn() {
     }
   });
 
-  navLink.forEach((link) => {
-    link.addEventListener('click', () => {
-      closeNavigation();
-    });
-  })
-
-
-
   function openNavigation() {
     navBtn.classList.add('nav__btn--open');
     navBtnBurger.classList.add('nav__btn-burger--open');
     navList.classList.add('nav__list--open');
     body.classList.add('body--scrolloff');
+
+    navLink.forEach((link) => {
+      link.addEventListener('click', () => {
+        closeNavigation();
+      });
+    });
+
     navOpen = true;
-  }
+  };
 
   function closeNavigation() {
     navBtn.classList.remove('nav__btn--open');
@@ -37,5 +36,5 @@ export  default function navigationBurgerBtn() {
     navList.classList.remove('nav__list--open');
     body.classList.remove('body--scrolloff');
     navOpen = false;
-  }
+  };
 }
