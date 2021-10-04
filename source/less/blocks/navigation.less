@@ -24,6 +24,7 @@
   background-color: transparent;
   margin: 0;
   padding: 0;
+  z-index: 1;
 }
 
 .nav__btn-burger {
@@ -95,8 +96,8 @@
     width: 100%;
     height: min-content;
 
-    background-color: tomato;
-    color: #fff;
+    background-color: rgba(60, 60, 60, 0.9);
+    color: @standart-white;
 
     display: flex;
     flex-direction: column;
@@ -107,6 +108,11 @@
 
 .nav__elem {
   list-style: none;
+
+  @media (max-width: @tablet-width) {
+    margin-bottom: 20px;
+    padding: 10px;
+  }
 }
 
 .nav__link {
@@ -129,5 +135,11 @@
     text-decoration: underline;
     text-decoration-thickness: 4px;
     color: tomato;
+  }
+
+  @media (max-width: @tablet-width) {
+    color: @standart-white;
+    font-size: 24px;
+    letter-spacing: 1px;
   }
 }
