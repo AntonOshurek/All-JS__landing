@@ -4,6 +4,7 @@ import tabs from './blocks/tabs';
 import popup from './blocks/popup';
 import pagination from './blocks/pagination';
 import navigationBurgerBtn from './blocks/navigationBurgerBtn';
+import scrollup from './blocks/scrollup';
 
 window.addEventListener('DOMContentLoaded', () => {
   navigationBurgerBtn();
@@ -12,5 +13,6 @@ window.addEventListener('DOMContentLoaded', () => {
     tabs();
     popup();
     pagination();
+    scrollup();
 });
 
