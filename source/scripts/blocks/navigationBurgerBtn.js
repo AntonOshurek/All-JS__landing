@@ -34,6 +34,7 @@ export  default function navigationBurgerBtn() {
     });
 
     window.addEventListener('resize', (e) => {
+      console.log(e);
       if (window.screen.width > 900) {
         closeNavigation();
       };
@@ -48,6 +49,7 @@ export  default function navigationBurgerBtn() {
     navList.classList.remove('nav__list--open');
     body.classList.remove('body--scrolloff');
     noTouchBG.classList.remove('nav__background-notouch--on');
+
     navOpen = false;
   };
 
