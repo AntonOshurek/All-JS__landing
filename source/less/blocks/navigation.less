@@ -25,6 +25,7 @@
   margin: 0;
   padding: 0;
   z-index: 1;
+  cursor: pointer;
 }
 
 .nav__btn-burger {
@@ -47,6 +48,15 @@
     background-color: #000;
     border-radius: 5px;
     transition: all 0.5s ease-in-out;
+  }
+
+  &--open {
+    background-color: @standart-white;
+
+    &::before,
+    &::after {
+      background-color: @standart-white;
+    }
   }
 
   &::before {
@@ -79,7 +89,11 @@
   height: 100%;
 
   @media (max-width: @tablet-width) {
-    //display: none;
+    display: none;
+  }
+
+  &--open {
+    display: block;
   }
 }
 
@@ -112,6 +126,8 @@
   @media (max-width: @tablet-width) {
     margin-bottom: 20px;
     padding: 10px;
+    width: 100%;
+    text-align: center;
   }
 }
 
@@ -138,8 +154,19 @@
   }
 
   @media (max-width: @tablet-width) {
+    display: inline-block;
     color: @standart-white;
     font-size: 24px;
     letter-spacing: 1px;
+    width: 100%;
+    border-bottom: 4px solid transparent;
+
+    &:hover,
+    &:focus,
+    &:active {
+      opacity: 0.9;
+      text-decoration: none;
+      border-bottom: 4px solid tomato;
+    }
   }
 }
