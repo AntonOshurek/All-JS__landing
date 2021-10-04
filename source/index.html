@@ -12,6 +12,7 @@
     <nav class="nav">
       <div class="nav__btn-wrap">
         <button class="nav__btn" type="button">
+          <span class="visually-hidden">menu button</span>
           <span class="nav__btn-burger"></span>
         </button>
       </div>
@@ -19,7 +20,7 @@
         <div class="nav__background-notouch"></div>
         <ul class="nav__list-wrap">
           <li class="nav__elem">
-            <a class="nav__link" href="#slider"><nobr>slider 1</nobr> </a>
+            <a class="nav__link" href="#slider"><nobr>slider 1</nobr></a>
           </li>
           <li class="nav__elem">
             <a class="nav__link" href="#sliderfull"><nobr>slider full</nobr></a>
@@ -47,8 +48,8 @@
             <path d="M17.3205 -3.02842e-06L17.3205 4.25L7.43094e-07 4.25L8.32056 1.75L17.3205 -3.02842e-06Z" fill="black"/>
             </svg>
         </button>
-        <span class="sleder-controls__total sleder-controls__total--current">01</span>
-        <span class="sleder-controls__total sleder-controls__total--total">04</span>
+        <span class="sleder-controls__total sleder-controls__total--current" aria-label="current element">01</span>
+        <span class="sleder-controls__total sleder-controls__total--total" aria-label="total elements">04</span>
         <button class="sleder-controls__button sleder-controls__button--next" type="button"><span class="visually-hidden">right</span>
           <svg class="sleder-controls__button-img" aria-hidden="true" focusable="false" width="38" height="5" viewBox="0 0 38 5" fill="none" xmlns="http://www.w3.org/2000/svg">
             <line y1="1" x2="30" y2="1" stroke="black" stroke-width="2"/>
@@ -108,8 +109,8 @@
       <h2 class="main__title">Slider Full Block</h2>
       <div class="sliderfull__wrap">
         <div class="slederfull-controls">
-          <span class="slederfull-controls__total slederfull-controls__total--current">01</span>
-          <span class="slederfull-controls__total slederfull-controls__total--total">04</span>
+          <span class="slederfull-controls__total slederfull-controls__total--current" aria-label="current element">01</span>
+          <span class="slederfull-controls__total slederfull-controls__total--total" aria-label="total elements">04</span>
         </div>
         <ul class="sliderfull-indicators">
           <!--elements added dynamically from javascript-->
