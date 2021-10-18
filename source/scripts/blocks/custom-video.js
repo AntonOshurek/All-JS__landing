@@ -5,7 +5,7 @@ export default function customVideo() {
   const progressBar = document.querySelector('.player__status-bar');
   const playerTime = document.querySelector('.player__time');
 
-  function getZero (num) {
+  const getZero = (num) => {
     if (num >= 0 && num < 10) {
       return `0${num}`;
     } else {
@@ -13,7 +13,7 @@ export default function customVideo() {
     }
   };
 
-  function toggleVideoStatus() {
+  const toggleVideoStatus = () => {
     if (video.paused) {
       video.play();
       playBtn.style.backgroundImage = 'url("../../img//custom-video/pause.svg")';
@@ -25,21 +25,21 @@ export default function customVideo() {
   playBtn.addEventListener('click', toggleVideoStatus);
   video.addEventListener('click', toggleVideoStatus);
 
-  function stopVideo() {
+  replayBtn.addEventListener('click', () => {
     video.currentTime = 0;
     video.pause();
-  };
-  replayBtn.addEventListener('click', stopVideo);
+  });
 
-  function updateProgress() {
+  video.addEventListener('timeupdate', () => {
     progressBar.value = (video.currentTime / video.duration) * 100;
 
     let minutes = Math.floor(video.currentTime / 60);
-
     let seconds = Math.floor(video.currentTime % 60);
 
     playerTime.textContent = `${getZero(minutes)} : ${getZero(seconds)}`;
-  }
+  });
 
-  video.addEventListener('timeupdate', updateProgress);
+  progressBar.addEventListener('change', () => {
+    video.currentTime = (progressBar.value * video.duration) / 100;
+  });
 };
