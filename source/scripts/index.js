@@ -1,3 +1,4 @@
+import customvideo from './blocks/custom-video';
 import slider from './blocks/slider';
 import sliderFull from './blocks/sliderfull';
 import tabs from './blocks/tabs';
@@ -7,12 +8,13 @@ import navigationBurgerBtn from './blocks/navigationBurgerBtn';
 import scrollup from './blocks/scrollup';
 
 window.addEventListener('DOMContentLoaded', () => {
+  customvideo();
   navigationBurgerBtn();
-    slider();
-    sliderFull();
-    tabs();
-    popup();
-    pagination();
-    scrollup();
+  slider();
+  sliderFull();
+  tabs();
+  popup();
+  pagination();
+  scrollup();
 });
 
