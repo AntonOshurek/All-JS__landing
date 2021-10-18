@@ -2,6 +2,61 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./source/scripts/blocks/custom-video.js":
+/*!***********************************************!*\
+  !*** ./source/scripts/blocks/custom-video.js ***!
+  \***********************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ customVideo; }
+/* harmony export */ });
+function customVideo() {
+  const video = document.querySelector('.player__video');
+  const playBtn = document.querySelector('.player__play');
+  const replayBtn = document.querySelector('.player__replay');
+  const progressBar = document.querySelector('.player__status-bar');
+  const playerTime = document.querySelector('.player__time');
+
+  const getZero = num => {
+    if (num >= 0 && num < 10) {
+      return `0${num}`;
+    } else {
+      return num;
+    }
+  };
+
+  const toggleVideoStatus = () => {
+    if (video.paused) {
+      video.play();
+      playBtn.style.backgroundImage = 'url("../../img//custom-video/pause.svg")';
+    } else {
+      video.pause();
+      playBtn.style.backgroundImage = 'url("../../img//custom-video/play.svg")';
+    }
+  };
+
+  playBtn.addEventListener('click', toggleVideoStatus);
+  video.addEventListener('click', toggleVideoStatus);
+  replayBtn.addEventListener('click', () => {
+    video.currentTime = 0;
+    video.pause();
+  });
+  video.addEventListener('timeupdate', () => {
+    progressBar.value = video.currentTime / video.duration * 100;
+    let minutes = Math.floor(video.currentTime / 60);
+    let seconds = Math.floor(video.currentTime % 60);
+    playerTime.textContent = `${getZero(minutes)} : ${getZero(seconds)}`;
+  });
+  progressBar.addEventListener('change', () => {
+    video.currentTime = progressBar.value * video.duration / 100;
+  });
+}
+;
+
+/***/ }),
+
 /***/ "./source/scripts/blocks/navigationBurgerBtn.js":
 /*!******************************************************!*\
   !*** ./source/scripts/blocks/navigationBurgerBtn.js ***!
@@ -555,13 +610,15 @@ var __webpack_exports__ = {};
   !*** ./source/scripts/index.js ***!
   \*********************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _blocks_slider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./blocks/slider */ "./source/scripts/blocks/slider.js");
-/* harmony import */ var _blocks_sliderfull__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./blocks/sliderfull */ "./source/scripts/blocks/sliderfull.js");
-/* harmony import */ var _blocks_tabs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./blocks/tabs */ "./source/scripts/blocks/tabs.js");
-/* harmony import */ var _blocks_popup__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./blocks/popup */ "./source/scripts/blocks/popup.js");
-/* harmony import */ var _blocks_pagination__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./blocks/pagination */ "./source/scripts/blocks/pagination.js");
-/* harmony import */ var _blocks_navigationBurgerBtn__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./blocks/navigationBurgerBtn */ "./source/scripts/blocks/navigationBurgerBtn.js");
-/* harmony import */ var _blocks_scrollup__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./blocks/scrollup */ "./source/scripts/blocks/scrollup.js");
+/* harmony import */ var _blocks_custom_video__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./blocks/custom-video */ "./source/scripts/blocks/custom-video.js");
+/* harmony import */ var _blocks_slider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./blocks/slider */ "./source/scripts/blocks/slider.js");
+/* harmony import */ var _blocks_sliderfull__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./blocks/sliderfull */ "./source/scripts/blocks/sliderfull.js");
+/* harmony import */ var _blocks_tabs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./blocks/tabs */ "./source/scripts/blocks/tabs.js");
+/* harmony import */ var _blocks_popup__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./blocks/popup */ "./source/scripts/blocks/popup.js");
+/* harmony import */ var _blocks_pagination__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./blocks/pagination */ "./source/scripts/blocks/pagination.js");
+/* harmony import */ var _blocks_navigationBurgerBtn__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./blocks/navigationBurgerBtn */ "./source/scripts/blocks/navigationBurgerBtn.js");
+/* harmony import */ var _blocks_scrollup__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./blocks/scrollup */ "./source/scripts/blocks/scrollup.js");
+
 
 
 
@@ -570,13 +627,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 window.addEventListener('DOMContentLoaded', () => {
-  (0,_blocks_navigationBurgerBtn__WEBPACK_IMPORTED_MODULE_5__["default"])();
-  (0,_blocks_slider__WEBPACK_IMPORTED_MODULE_0__["default"])();
-  (0,_blocks_sliderfull__WEBPACK_IMPORTED_MODULE_1__["default"])();
-  (0,_blocks_tabs__WEBPACK_IMPORTED_MODULE_2__["default"])();
-  (0,_blocks_popup__WEBPACK_IMPORTED_MODULE_3__["default"])();
-  (0,_blocks_pagination__WEBPACK_IMPORTED_MODULE_4__["default"])();
-  (0,_blocks_scrollup__WEBPACK_IMPORTED_MODULE_6__["default"])();
+  (0,_blocks_custom_video__WEBPACK_IMPORTED_MODULE_0__["default"])();
+  (0,_blocks_navigationBurgerBtn__WEBPACK_IMPORTED_MODULE_6__["default"])();
+  (0,_blocks_slider__WEBPACK_IMPORTED_MODULE_1__["default"])();
+  (0,_blocks_sliderfull__WEBPACK_IMPORTED_MODULE_2__["default"])();
+  (0,_blocks_tabs__WEBPACK_IMPORTED_MODULE_3__["default"])();
+  (0,_blocks_popup__WEBPACK_IMPORTED_MODULE_4__["default"])();
+  (0,_blocks_pagination__WEBPACK_IMPORTED_MODULE_5__["default"])();
+  (0,_blocks_scrollup__WEBPACK_IMPORTED_MODULE_7__["default"])();
 });
 }();
 /******/ })()
