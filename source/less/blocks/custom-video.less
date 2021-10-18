@@ -8,15 +8,13 @@
   grid-gap: 33px;
   width: 100%;
 
-  /*@media (min-width: @tablet-width) {
-    max-width: 648px;
+  @media (min-width: @tablet-width) {
     grid-gap: 62px;
   }
 
   @media (min-width: @desctope-width) {
-    max-width: 800px;
     grid-gap: 66px;
-  }*/
+  }
 }
 
 .custom-video__description {
@@ -53,6 +51,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (min-width: @tablet-width) {
+    max-width: 800px;
+  }
+
+  @media (min-width: @desctope-width) {
+    max-width: 1000px;
+  }
 }
 
 .player__video {
@@ -64,9 +70,9 @@
     width: 100%;
   }
 
-  /*@media (min-width: @tablet-width) {
+  @media (min-width: @tablet-width) {
     height: 500px;
-  }*/
+  }
 }
 
 //controls block
@@ -85,7 +91,7 @@
   margin: 0 20px;
   background-color: #fff;
 
- /* @media (min-width: @tablet-width) {
+  @media (min-width: @tablet-width) {
     margin: 0;
     padding: 0 35px;
     position: absolute;
@@ -99,7 +105,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-  }*/
+  }
 }
 
 //input type range, status bar
@@ -108,30 +114,23 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 23px;
+  padding: 0 33px;
   top: -45px;
   left: 0;
   right: 0;
   height: 45px;
   background: rgba(000, 000, 000, 0.6);
 
- /* @media (min-width: @tablet-width) {
+  @media (min-width: @tablet-width) {
+    flex-grow: 2;
     position: static;
     background: transparent;
     height: auto;
-  }*/
+  }
 }
 
 .player__status-bar {
   width: 100%;
-
- /* @media (min-width: @tablet-width) {
-    width: 389px;
-  }
-
-  @media (min-width: @desctop-width) {
-    width: 540px;
-  }*/
 }
 
 //controls buttons
@@ -142,7 +141,7 @@
   background-color: transparent;
   cursor: pointer;
 
-  /*@media (min-width: @tablet-width) {
+  @media (min-width: @tablet-width) {
     &:hover {
       opacity: 0.6;
     }
@@ -150,7 +149,7 @@
     &:active {
       opacity: 0.3;
     }
-  }*/
+  }
 }
 
 .player__play {
