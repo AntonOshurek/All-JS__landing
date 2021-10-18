@@ -1,9 +1,17 @@
 export default function customVideo() {
   const video = document.querySelector('.player__video');
   const playBtn = document.querySelector('.player__play');
-  const stopBtn = document.querySelector('.player__stop');
   const replayBtn = document.querySelector('.player__replay');
   const progressBar = document.querySelector('.player__status-bar');
+  const playerTime = document.querySelector('.player__time');
+
+  function getZero (num) {
+    if (num >= 0 && num < 10) {
+      return `0${num}`;
+    } else {
+      return num;
+    }
+  };
 
   function toggleVideoStatus() {
     if (video.paused) {
@@ -26,14 +34,11 @@ export default function customVideo() {
   function updateProgress() {
     progressBar.value = (video.currentTime / video.duration) * 100;
 
-    /*let minutes = Math.floor(video.currentTime / 60);
-    if (minutes < 10) {
-      minutes = '0' + String(minutes);
-    }*/
+    let minutes = Math.floor(video.currentTime / 60);
 
-    //let seconds = Math.floor(video.currentTime % 60);
+    let seconds = Math.floor(video.currentTime % 60);
 
-    //time.innerHTML = `${minutes} : ${seconds}`;
+    playerTime.textContent = `${getZero(minutes)} : ${getZero(seconds)}`;
   }
 
   video.addEventListener('timeupdate', updateProgress);
