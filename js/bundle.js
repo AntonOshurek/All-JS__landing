@@ -30,10 +30,10 @@ function customVideo() {
   const toggleVideoStatus = () => {
     if (video.paused) {
       video.play();
-      playBtn.style.backgroundImage = 'url("../../img//custom-video/pause.svg")';
+      playBtn.classList.add('player__stop');
     } else {
       video.pause();
-      playBtn.style.backgroundImage = 'url("../../img//custom-video/play.svg")';
+      playBtn.classList.remove('player__stop');
     }
   };
 
