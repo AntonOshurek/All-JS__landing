@@ -1,14 +1,14 @@
 const youtubeVideo = () => {
-  const videos = document.querySelectorAll('.video');
+  const videos = document.querySelectorAll('.yt-video');
 
   for (let i = 0; i < videos.length; i++) {
     setupVideo(videos[i]);
   }
 
   function setupVideo(video) {
-    let link = video.querySelector('.video__link');
-    let media = video.querySelector('.video__media');
-    let button = video.querySelector('.video__button');
+    let link = video.querySelector('.yt-video__link');
+    let media = video.querySelector('.yt-video__media');
+    let button = video.querySelector('.yt-video__button');
     let id = parseMediaURL(media);
 
     video.addEventListener('click', () => {
@@ -20,7 +20,7 @@ const youtubeVideo = () => {
     });
 
     link.removeAttribute('href');
-    video.classList.add('video--enabled');
+    video.classList.add('yt-video--enabled');
   }
 
   function parseMediaURL(media) {
@@ -37,7 +37,7 @@ const youtubeVideo = () => {
     iframe.setAttribute('allowfullscreen', '');
     iframe.setAttribute('allow', 'autoplay');
     iframe.setAttribute('src', generateURL(id));
-    iframe.classList.add('video__media');
+    iframe.classList.add('yt-video__media');
 
     return iframe;
   }
