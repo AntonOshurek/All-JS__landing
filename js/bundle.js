@@ -98,8 +98,6 @@ function navigationBurgerBtn() {
       closeNavigation();
     });
     window.addEventListener('resize', e => {
-      console.log(e);
-
       if (window.screen.width > 900) {
         closeNavigation();
       }
@@ -339,6 +337,55 @@ function scrollup() {
 
   ;
 }
+
+/***/ }),
+
+/***/ "./source/scripts/blocks/set-current-menu-item.js":
+/*!********************************************************!*\
+  !*** ./source/scripts/blocks/set-current-menu-item.js ***!
+  \********************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "setCurrentMenuItem": function() { return /* binding */ setCurrentMenuItem; }
+/* harmony export */ });
+const setCurrentMenuItem = () => {
+  const isScrolledIntoView = elem => {
+    const rect = elem.getBoundingClientRect();
+    const elemTop = rect.top;
+    const elemBottom = rect.bottom;
+    const isVisible = elemTop < window.innerHeight / 2 && Math.sign(elemTop) != -1 || elemBottom > window.innerHeight / 2 && elemBottom < window.innerHeight;
+    return isVisible;
+  };
+
+  const allSections = document.querySelectorAll('section');
+  const allNavLinks = document.querySelectorAll('.nav__link');
+  const secArr = [...allSections]; // if you need add for this logick other blocks =>
+  //  const footerBlock = document.querySelector('.footer');
+  //  const secArr = [...allSections, footerBlock];
+
+  const markCurrentMenuItem = () => {
+    secArr.forEach(section => {
+      let sectionClass;
+
+      if (isScrolledIntoView(section)) {
+        sectionClass = section.className;
+        allNavLinks.forEach(link => {
+          link.classList.remove('nav__link--current');
+
+          if (link.getAttribute('data-nav-name') === sectionClass) {
+            link.classList.add('nav__link--current');
+          }
+        });
+      }
+    });
+  };
+
+  window.addEventListener('scroll', markCurrentMenuItem);
+};
+
+
 
 /***/ }),
 
@@ -618,6 +665,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _blocks_pagination__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./blocks/pagination */ "./source/scripts/blocks/pagination.js");
 /* harmony import */ var _blocks_navigationBurgerBtn__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./blocks/navigationBurgerBtn */ "./source/scripts/blocks/navigationBurgerBtn.js");
 /* harmony import */ var _blocks_scrollup__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./blocks/scrollup */ "./source/scripts/blocks/scrollup.js");
+/* harmony import */ var _blocks_set_current_menu_item__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./blocks/set-current-menu-item */ "./source/scripts/blocks/set-current-menu-item.js");
+
 
 
 
@@ -635,6 +684,7 @@ window.addEventListener('DOMContentLoaded', () => {
   (0,_blocks_popup__WEBPACK_IMPORTED_MODULE_4__["default"])();
   (0,_blocks_pagination__WEBPACK_IMPORTED_MODULE_5__["default"])();
   (0,_blocks_scrollup__WEBPACK_IMPORTED_MODULE_7__["default"])();
+  (0,_blocks_set_current_menu_item__WEBPACK_IMPORTED_MODULE_8__.setCurrentMenuItem)();
 });
 }();
 /******/ })()
