@@ -34,7 +34,6 @@ export  default function navigationBurgerBtn() {
     });
 
     window.addEventListener('resize', (e) => {
-      console.log(e);
       if (window.screen.width > 900) {
         closeNavigation();
       };
