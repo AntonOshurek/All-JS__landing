@@ -7,6 +7,7 @@ import pagination from './blocks/pagination';
 import navigationBurgerBtn from './blocks/navigationBurgerBtn';
 import scrollup from './blocks/scrollup';
 import {setCurrentMenuItem} from './blocks/set-current-menu-item';
+import {youtubeVideo} from './blocks/youtube-video';
 
 window.addEventListener('DOMContentLoaded', () => {
   customvideo();
@@ -18,5 +19,6 @@ window.addEventListener('DOMContentLoaded', () => {
   pagination();
   scrollup();
   setCurrentMenuItem();
+  youtubeVideo();
 });
 
